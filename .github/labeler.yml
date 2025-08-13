@@ -1,0 +1,15 @@
+# Add 'repo' label to any root file changes
+repo:
+- '*'
+
+# Add 'frontend` label to any change to client
+frontend:
+- any: ['frontend/**/*']
+
+
+# Add 'backend` label to any change to client
+backend:
+- any: ['backend/**/*']
+
+documentation:
+- any: ['docs/build/**/*']

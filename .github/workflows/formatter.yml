@@ -1,0 +1,35 @@
+name: Code Formatter
+
+on:
+  push:
+    branches:
+    - "**"
+    - "!main"
+    - "!*-protected"
+
+jobs:
+  apply-formatting:
+    if: contains(${{ github.event.head_commit.message }}, "formatted") == false
+    name: Apply Formatting
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        persist-credentials: true
+        fetch-depth: 0
+    - name: Run Black
+      uses: lgeiger/black-action@master
+      with:
+        args: --exclude Lib .
+    - name: Run YAPF
+      uses: mritunjaysharma394/autoyapf@v2
+      with:
+        args: -rip -vv .
+    - name: Commit and Push Changes
+      uses: EndBug/add-and-commit@v9
+      with:
+        message: "${{ github.event.head_commit.message }} - formatted."
+        author_name: ${{ github.event.head_commit.author.name }}
+        author_email: ${{ github.event.head_commit.author.email }}
+        committer_name: GitHub Actions
+        committer_email: github-actions[bot]@users.noreply.github.com

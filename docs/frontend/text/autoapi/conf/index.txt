@@ -1,0 +1,26 @@
+"conf"
+******
+
+
+Module Contents
+===============
+
+conf.project = Relay
+
+conf.copyright = 2022, Arnav Udupa, Shamantha Shastri, Somanshu Mendon
+
+conf.author = Arnav Udupa, Shamantha Shastri, Somanshu Mendon
+
+conf.extensions = ['sphinx.ext.autodoc', 'sphinx.ext.autosummary', 'autoapi.extension', 'sphinx.ext.coverage',...
+
+conf.templates_path = ['_templates']
+
+conf.exclude_patterns = ['frontend/conf.py']
+
+conf.html_theme = furo
+
+conf.html_static_path = ['_static']
+
+conf.autoapi_type = python
+
+conf.autoapi_dirs = ['.']

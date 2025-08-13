@@ -1,0 +1,40 @@
+[OPTIONS]
+Binary TOC=No
+Binary Index=No
+Compiled file=relaydoc.chm
+Contents file=relaydoc.hhc
+Default Window=relaydoc
+Default topic=index.html
+Display compile progress=No
+Full text search stop list file=relaydoc.stp
+Full-text search=Yes
+Index file=relaydoc.hhk
+Language=0x409
+Title=Relay  documentation
+
+[WINDOWS]
+relaydoc="Relay  documentation","relaydoc.hhc","relaydoc.hhk","index.html","index.html",,,,,0x63520,220,0x10384e,[0,0,1024,768],,,,,,,0
+
+[FILES]
+genindex.html
+index.html
+py-modindex.html
+_modules\index.html
+_modules\main.html
+_static\basic.css
+_static\debug.css
+_static\file.png
+_static\graphviz.css
+_static\minus.png
+_static\plus.png
+_static\pygments.css
+_static\skeleton.css
+_static\scripts\furo.js.LICENSE.txt
+_static\scripts\furo.js.map
+_static\styles\furo-extensions.css
+_static\styles\furo-extensions.css.map
+_static\styles\furo.css
+_static\styles\furo.css.map
+autoapi\index.html
+autoapi\conf\index.html
+autoapi\main\index.html

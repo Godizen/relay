@@ -1,0 +1,102 @@
+"login"
+*******
+
+
+Module Contents
+===============
+
+
+Classes
+-------
+
++------------+--------------------------------------------------------------------------------------------+
+| "relayCli  | The relay client window class.                                                             |
+| ent"       |                                                                                            |
++------------+--------------------------------------------------------------------------------------------+
+
+class login.relayClient
+
+   Bases: "tkinter.Tk"
+
+   The relay client window class.
+
+   logout(*kwargs) -> None
+
+      Sends the logout packet and exits the app if logged out.
+
+   login(u, p) -> None
+
+      Sends the login packet and tries to login with the credentials.
+
+   signup(u, p, c) -> None
+
+      Sends the signup packet and tries to signup with the
+      credentials.
+
+   rsa_keys(usrname) -> rsa.PublicKey
+
+      Creates an RSA key pair for message encryption and decryption.
+
+   hashPass(p) -> bytes
+
+      Hashes the password with sha512 hashing algorithm and encodes
+      the hash with base64.
+
+   showPasswd() -> None
+
+      Shows the password in clear text in the password and confirm
+      password fields.
+
+   hidePasswd() -> None
+
+      Shows password in asterisks in the password and confirm password
+      fields.
+
+   pageLogin() -> None
+
+      Switches the page to the login page.
+
+   pageSignup() -> None
+
+      Switches the page to the signup page.
+
+   explode() -> None
+
+      Transition from login/signup to the messages page.
+
+   postLogin() -> None
+
+      Creates the messages page.
+
+   sendmsg(event) -> None
+
+      Sends the message if return is pressed.
+
+   chngChat() -> None
+
+      Changes the chat to the one with the selected user in the
+      dropdown menu.
+
+   send(m) -> None
+
+      Sends message to the selected user in dropdown menu. If no user
+      selected, gets list of online users and updates the dropdown
+      menu.
+
+   getOnline() -> None
+
+      Gets list of online users and updates the dropdown menu.
+
+   getKey() -> None
+
+      Gets RSA public key of the selected user in the dropdown menu
+      and updates the dropdown menu.
+
+   displayMessage(msgPacket) -> None
+
+      Displays the message received in the chat area and updates the
+      stored messages.
+
+   saveMessages(user) -> None
+
+      Saves the stored messages in a file.

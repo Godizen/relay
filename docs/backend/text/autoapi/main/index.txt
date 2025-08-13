@@ -1,0 +1,133 @@
+"main"
+******
+
+
+Module Contents
+===============
+
+
+Classes
+-------
+
++------------+--------------------------------------------------------------------------------------------+
+| "User"     | The User class that handles the communication with the client(s) and handles database      |
+|            | connections for each user.                                                                 |
++------------+--------------------------------------------------------------------------------------------+
+| "Threaded  | Base class for request handler classes.                                                    |
+| RequestHa  |                                                                                            |
+| ndler"     |                                                                                            |
++------------+--------------------------------------------------------------------------------------------+
+| "Threaded  | Mix-in class to handle each request in a new thread.                                       |
+| TCPServer" |                                                                                            |
++------------+--------------------------------------------------------------------------------------------+
+
+
+Attributes
+----------
+
++------------+--------------------------------------------------------------------------------------------+
+| "usersend  |                                                                                            |
+| map"       |                                                                                            |
++------------+--------------------------------------------------------------------------------------------+
+
+class main.User(conn: socket.socket, addr: tuple, db: dict[str, str])
+
+   The User class that handles the communication with the client(s)
+   and handles database connections for each user.
+
+   classmethod create_object(conn: socket.socket, addr: tuple, db: dict[str, str]) -> User
+
+      The class method that creates a new User object. :param conn:
+      The connection to the client. :param addr: The address of the
+      client. :param db: The database connection configuration.
+      :return: The new User object.
+
+   send(msg) -> None
+
+      The function that sends encrypted data to the client. :param
+      msg: The message to send.
+
+   recv() -> dict[str, Any]
+
+      The function that receives encrypted data from the client and
+      decrypts it. :return: The decrypted data in the form of a
+      dictionary.
+
+   session_check(check) -> bool
+
+      The function that checks if the session id is valid. :param
+      check: The session id to check. :return: True if the session id
+      is valid, False otherwise.
+
+   login(dat) -> bool
+
+      The function that handles the login request. :param dat: The
+      login data. :return: True if the login was successful, False
+      otherwise.
+
+   register(dat) -> bool
+
+      The function that handles the registration request. :param dat:
+      The registration data. :return: True if the registration was
+      successful, False otherwise.
+
+   logout(dat) -> bool
+
+      The function that handles the logout request. :param dat: The
+      logout data. :return: True if the logout was successful, False
+      otherwise.
+
+   get_key(dat) -> bool
+
+      The function that handles the get key request. :param dat: The
+      get key data. :return: True if the get key was successful, False
+      otherwise.
+
+   get_online(dat) -> bool
+
+      The function that handles the get online request. :param dat:
+      The get online data. :return: True if the get online was
+      successful, False otherwise.
+
+   message(dat) -> bool
+
+      The function that handles the message request. :param dat: The
+      message data. :return: True if the message was successful, False
+      otherwise.
+
+   manage() -> None
+
+      The function that handles the manage request. :return: None.
+
+   __del__() -> None
+
+      The function that handles the deletion of the client. :return:
+      None.
+
+class main.ThreadedRequestHandler(request, client_address, server)
+
+   Bases: "socketserver.BaseRequestHandler"
+
+   Base class for request handler classes.
+
+   This class is instantiated for each request to be handled.  The
+   constructor sets the instance variables request, client_address and
+   server, and then calls the handle() method.  To implement a
+   specific service, all you need to do is to derive a class which
+   defines a handle() method.
+
+   The handle() method can find the request as self.request, the
+   client address as self.client_address, and the server (in case it
+   needs access to per-server information) as self.server.  Since a
+   separate instance is created for each request, the handle() method
+   can define other arbitrary instance variables.
+
+   handle()
+
+class main.ThreadedTCPServer(server_address, RequestHandlerClass, bind_and_activate=True)
+
+   Bases: "socketserver.ThreadingMixIn", "socketserver.TCPServer"
+
+   Mix-in class to handle each request in a new thread.
+
+main.usersendmap

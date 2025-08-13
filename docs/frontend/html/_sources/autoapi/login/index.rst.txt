@@ -1,0 +1,116 @@
+:py:mod:`login`
+===============
+
+.. py:module:: login
+
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. autoapisummary::
+
+   login.relayClient
+
+
+
+
+.. py:class:: relayClient
+
+   Bases: :py:obj:`tkinter.Tk`
+
+   The relay client window class.
+
+   .. py:method:: logout(*kwargs) -> None
+
+      Sends the logout packet and exits the app if logged out.
+
+
+   .. py:method:: login(u, p) -> None
+
+      Sends the login packet and tries to login with the credentials.
+
+
+   .. py:method:: signup(u, p, c) -> None
+
+      Sends the signup packet and tries to signup with the credentials.
+
+
+   .. py:method:: rsa_keys(usrname) -> rsa.PublicKey
+
+      Creates an RSA key pair for message encryption and decryption.
+
+
+   .. py:method:: hashPass(p) -> bytes
+
+      Hashes the password with sha512 hashing algorithm and encodes the hash with base64.
+
+
+   .. py:method:: showPasswd() -> None
+
+      Shows the password in clear text in the password and confirm password fields.
+
+
+   .. py:method:: hidePasswd() -> None
+
+      Shows password in asterisks in the password and confirm password fields.
+
+
+   .. py:method:: pageLogin() -> None
+
+      Switches the page to the login page.
+
+
+   .. py:method:: pageSignup() -> None
+
+      Switches the page to the signup page.
+
+
+   .. py:method:: explode() -> None
+
+      Transition from login/signup to the messages page.
+
+
+   .. py:method:: postLogin() -> None
+
+      Creates the messages page.
+
+
+   .. py:method:: sendmsg(event) -> None
+
+      Sends the message if return is pressed.
+
+
+   .. py:method:: chngChat() -> None
+
+      Changes the chat to the one with the selected user in the dropdown menu.
+
+
+   .. py:method:: send(m) -> None
+
+      Sends message to the selected user in dropdown menu. If no user selected, gets list of online users and updates the dropdown menu.
+
+
+   .. py:method:: getOnline() -> None
+
+      Gets list of online users and updates the dropdown menu.
+
+
+   .. py:method:: getKey() -> None
+
+      Gets RSA public key of the selected user in the dropdown menu and updates the dropdown menu.
+
+
+   .. py:method:: displayMessage(msgPacket) -> None
+
+      Displays the message received in the chat area and updates the stored messages.
+
+
+   .. py:method:: saveMessages(user) -> None
+
+      Saves the stored messages in a file.
+
+
+

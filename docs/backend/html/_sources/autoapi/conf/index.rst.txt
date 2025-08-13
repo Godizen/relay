@@ -1,0 +1,59 @@
+:py:mod:`conf`
+==============
+
+.. py:module:: conf
+
+
+Module Contents
+---------------
+
+.. py:data:: project
+   :annotation: = Relay
+
+   
+
+.. py:data:: copyright
+   :annotation: = 2022, Arnav Udupa, Shamantha Shastri, Somanshu Mendon
+
+   
+
+.. py:data:: author
+   :annotation: = Arnav Udupa, Shamantha Shastri, Somanshu Mendon
+
+   
+
+.. py:data:: extensions
+   :annotation: = ['sphinx.ext.autodoc', 'sphinx.ext.autosummary', 'autoapi.extension', 'sphinx.ext.coverage',...
+
+   
+
+.. py:data:: templates_path
+   :annotation: = ['_templates']
+
+   
+
+.. py:data:: exclude_patterns
+   :annotation: = ['backend/conf.py']
+
+   
+
+.. py:data:: html_theme
+   :annotation: = furo
+
+   
+
+.. py:data:: html_static_path
+   :annotation: = ['_static']
+
+   
+
+.. py:data:: autoapi_type
+   :annotation: = python
+
+   
+
+.. py:data:: autoapi_dirs
+   :annotation: = ['.']
+
+   
+
